@@ -1,0 +1,57 @@
+
+
+2- 安装配置Git  
+   a. 下载安装Git    
+   b. 配置个人用户信息     
+   c. 设置默认文本编辑器    
+
+
+### 2. 安装配置Git
+
+学习 Git 是进行版本控制和团队协作的基础。在这一章节中，我们将详细介绍如何安装、配置以及为后续的命令使用打下良好的基础。对于任何编程或者软件开发人员来说，掌握这一步骤是至关重要的。
+
+#### a. 下载安装Git
+首先需要下载并安装 Git 软件包到本地计算机上，在这里你可以选择 Windows/Linux/macOS 三种主流环境分别介绍如何进行正确安全地安装：
+
+- 如果你使用的是 Windows，则访问 https://git-scm.com/downloads 并根据系统的具体版本下载对应的软件包，推荐用户通过系统自带的 PowerShell 或命令行工具管理员权限打开该页面。
+- 对于 Linux 系统，可以根据你的发行版类型从官方网站或相关软件仓库获取安装脚本。例如：
+  - Ubuntu 下常用的是 `sudo apt-get install git`。
+  - 其他像红帽系列 Fedora、CentOS 和 Arch Linux 都有自己对应的安装方法。
+- Mac 用户可以通过 Homebrew 安装 Git，这是一种快速的方式。“/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` 然后执行 `brew install git`。
+
+以上三种配置都只需要运行 `git --version` 命令确认安装是否正确完成。
+
+#### b. 配置个人用户信息
+
+当你下载并安装好 Git 后，接下来的一步就是设置一些重要的个人信息。这些信息会用于为所有的提交提供签名：
+
+```shell
+$ git config --global user.name "Your Name"
+$ git config --global user.email you@example.com
+```
+
+`user.name` 通常是你 GitHub 等代码托管平台上的用户名，而 `user.email` 则是你的联系邮箱地址。这两项信息对于跟踪和验证谁提交了代码非常重要。
+
+例如：
+
+```shell
+git config --global user.name "JohnDoe"
+git config --global user.email "john@doe.com"
+```
+
+请注意，如果以后再次修改个人信息只需重新执行以上两个命令即可。
+
+#### c. 设置默认文本编辑器
+
+当你使用 Git 的时候会常常需要编写 .gitignore 文件或解决合并冲突，这往往需要用一个你喜欢的文本编辑器。你可以通过下面的方法来设置自己喜欢的默认 text editor 为 git 服务（如 Vim 或者 VS Code）：
+
+```shell
+$ git config --global core.editor "code --wait"
+```
+
+当然, 根据自己使用的工具，此处替换 "code" (VSCode) 可以是 "vim", "nano" 等。
+
+---
+以上章节介绍了在开启新的 Git 项目前所需的基本操作，包括下载安装流程、设置你的身份信息以及指定一个你喜欢的默认文本编辑器等重要步骤。接下来，在后续章节中我们将深入学习更多关于 git 基础命令和实际案例，帮助读者在版本控制和代码分享过程中更加熟练及高效地应用 Git 工具。
+
+这一章的内容与整体书籍有直接联系，因为它是使用更复杂的 git 命令执行版本管理的必要前提。只有安装好 Git 并完成正确的配置之后你才能够开始学习创建仓库、推送分支等各种更有技术深度的操作和技巧。
